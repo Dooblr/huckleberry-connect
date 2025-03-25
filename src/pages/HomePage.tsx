@@ -1,14 +1,55 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import './HomePage.scss';
 
+interface HexTile {
+  id: number;
+  color: string;
+  isGlowing: boolean;
+}
+
 const HomePage = () => {
+  const [hexTiles, setHexTiles] = useState<HexTile[]>([]);
+  const [activeTileId, setActiveTileId] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Generate 50 hex tiles with random colors
+    const tiles = Array.from({ length: 50 }, (_, index) => ({
+      id: index,
+      color: `hsl(${Math.random() * 360}, 70%, 50%)`,
+      isGlowing: false
+    }));
+    setHexTiles(tiles);
+
+    // Set up interval to randomly select one tile to glow
+    const interval = setInterval(() => {
+      setActiveTileId(Math.floor(Math.random() * 50));
+    }, 3000); // Increased from 2000ms to 3000ms for smoother transitions
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
+        <div className="hex-grid">
+          {hexTiles.map((tile) => (
+            <div
+              key={tile.id}
+              className={`hex-tile ${tile.id === activeTileId ? 'glow' : ''}`}
+              style={{ '--tile-color': tile.color } as React.CSSProperties}
+            />
+          ))}
+        </div>
         <div className="hero__content">
           <h1>Bridging Tech & Human Connection</h1>
-          <Link to="/get-involved" className="cta-button">Get Involved</Link>
+          {/* <p className="lead">
+            Empowering the next generation through technology education and innovation.
+          </p> */}
+          <Link to="/get-involved" className="cta-button">
+            Get Involved
+          </Link>
           <div className="scroll-arrow">↓</div>
         </div>
       </section>
