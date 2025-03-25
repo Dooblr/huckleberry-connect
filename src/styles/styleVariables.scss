@@ -1,0 +1,69 @@
+// Theme Colors
+:root {
+  // Light Theme
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-secondary: #10b981;
+  --color-secondary-dark: #059669;
+  --color-text: #1f2937;
+  --color-text-light: #4b5563;
+  --color-background: #ffffff;
+  --color-background-alt: #f3f4f6;
+  --color-background-card: #f9fafb;
+  --color-border: #e5e7eb;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --color-primary: #60a5fa;
+  --color-primary-dark: #3b82f6;
+  --color-secondary: #34d399;
+  --color-secondary-dark: #10b981;
+  --color-text: #f9fafb;
+  --color-text-light: #d1d5db;
+  --color-background: #111827;
+  --color-background-alt: #1f2937;
+  --color-background-card: #374151;
+  --color-border: #4b5563;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Border Radius
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+
+// Typography
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+$font-size-4xl: 2.25rem;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070; 

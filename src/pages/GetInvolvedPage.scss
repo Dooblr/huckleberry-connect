@@ -1,0 +1,159 @@
+@import '../styles/styleVariables.scss';
+
+.get-involved {
+  // Hero Section
+  .get-involved-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: $spacing-xl 0;
+    text-align: center;
+
+    h1 {
+      color: white;
+      margin-bottom: $spacing-sm;
+    }
+
+    .lead {
+      font-size: $font-size-xl;
+      opacity: 0.9;
+    }
+  }
+
+  // Alert
+  .alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: $spacing-md $spacing-lg;
+    border-radius: $border-radius-md;
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    z-index: $z-index-alert;
+    animation: slideIn 0.3s ease-out;
+
+    &.alert-success {
+      background-color: var(--color-success);
+      color: white;
+    }
+
+    &.alert-error {
+      background-color: var(--color-error);
+      color: white;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: $font-size-xl;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+  }
+
+  // Common Section Styles
+  section {
+    padding: $spacing-xl 0;
+
+    &:nth-child(even) {
+      background-color: var(--color-background-alt);
+    }
+  }
+
+  .section-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+      margin-bottom: $spacing-md;
+      color: var(--color-text);
+    }
+
+    p {
+      margin-bottom: $spacing-xl;
+      color: var(--color-text-light);
+    }
+  }
+
+  // Form Styles
+  .involvement-form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+
+    .form-group {
+      input,
+      textarea {
+        width: 100%;
+        padding: $spacing-sm;
+        border: 1px solid var(--color-border);
+        border-radius: $border-radius-md;
+        background-color: var(--color-background);
+        color: var(--color-text);
+        font-size: $font-size-base;
+
+        &::placeholder {
+          color: var(--color-text-light);
+        }
+
+        &:focus {
+          outline: none;
+          border-color: var(--color-primary);
+        }
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+    }
+
+    button {
+      margin-top: $spacing-md;
+    }
+  }
+
+  // Donations Section
+  .donations {
+    .section-content {
+      max-width: 600px;
+    }
+  }
+
+  // Animations
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: $breakpoint-md) {
+    .get-involved-hero {
+      padding: $spacing-lg 0;
+    }
+
+    section {
+      padding: $spacing-lg 0;
+    }
+
+    .section-content {
+      padding: 0 $spacing-md;
+    }
+
+    .involvement-form {
+      padding: 0 $spacing-md;
+    }
+  }
+} 

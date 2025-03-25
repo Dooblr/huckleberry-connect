@@ -1,0 +1,98 @@
+@import './styles/styleVariables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  transition: background-color $transition-normal, color $transition-normal;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  padding-top: 80px; // Account for fixed header
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: $spacing-sm;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: $font-size-4xl;
+}
+
+h2 {
+  font-size: $font-size-3xl;
+}
+
+h3 {
+  font-size: $font-size-2xl;
+}
+
+p {
+  margin-bottom: $spacing-sm;
+  color: var(--color-text-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+// Common button styles
+.cta-button {
+  display: inline-block;
+  padding: $spacing-sm $spacing-lg;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: $border-radius-md;
+  font-weight: 600;
+  transition: background-color $transition-fast;
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-secondary);
+
+  &:hover {
+    background-color: var(--color-secondary-dark);
+  }
+
+  &:disabled {
+    background-color: var(--color-text-light);
+    cursor: not-allowed;
+  }
+}
+
+// Common section styles
+section {
+  padding: $spacing-xl 0;
+}
+
+// Common card styles
+.card {
+  background-color: var(--color-background-card);
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+  box-shadow: 0 2px 4px var(--color-shadow);
+}
