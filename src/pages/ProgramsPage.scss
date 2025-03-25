@@ -1,0 +1,377 @@
+@import '../styles/styleVariables.scss';
+
+.programs {
+  .programs-hero {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--color-primary-dark) 100%
+    );
+    color: white;
+    padding: $spacing-xxl 0;
+    text-align: center;
+
+    h1 {
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-md;
+    }
+
+    .lead {
+      font-size: $font-size-xl;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+  }
+
+  .program-section {
+    padding: $spacing-xxl 0;
+
+    &:nth-child(even) {
+      background-color: var(--color-background-alt);
+    }
+
+    .section-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 $spacing-lg;
+
+      h2 {
+        font-size: $font-size-2xl;
+        margin-bottom: $spacing-lg;
+        color: var(--color-text);
+      }
+
+      .description {
+        font-size: $font-size-base;
+        color: var(--color-text-light);
+        margin-bottom: $spacing-xl;
+        max-width: 800px;
+      }
+    }
+  }
+
+  // Grovecraft Section
+  .grovecraft {
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: $spacing-lg;
+      margin: $spacing-xl 0;
+
+      .feature {
+        background: var(--color-background-card);
+        padding: $spacing-lg;
+        border-radius: $border-radius-md;
+        box-shadow: 0 1px 3px var(--color-shadow);
+
+        h3 {
+          font-size: $font-size-lg;
+          margin-bottom: $spacing-sm;
+          color: var(--color-text);
+        }
+
+        p {
+          color: var(--color-text-light);
+          font-size: $font-size-sm;
+        }
+      }
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-sm;
+      background: var(--color-primary);
+      color: white;
+      padding: $spacing-md $spacing-lg;
+      border-radius: $border-radius-md;
+      text-decoration: none;
+      font-weight: 500;
+      transition: $transition-normal;
+
+      &:hover {
+        background: var(--color-primary-dark);
+        transform: translateY(-2px);
+      }
+
+      .icon {
+        font-size: $font-size-sm;
+      }
+    }
+  }
+
+  // Hackathons Section
+  .hackathons {
+    .upcoming-events {
+      margin-top: $spacing-xl;
+
+      h3 {
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-lg;
+        color: var(--color-text);
+      }
+
+      .event-list {
+        display: grid;
+        gap: $spacing-lg;
+
+        .event-item {
+          background: var(--color-background-card);
+          padding: $spacing-lg;
+          border-radius: $border-radius-md;
+          box-shadow: 0 1px 3px var(--color-shadow);
+          display: grid;
+          grid-template-columns: auto 1fr auto;
+          gap: $spacing-lg;
+          align-items: center;
+
+          .event-date {
+            font-weight: 600;
+            color: var(--color-primary);
+            min-width: 120px;
+          }
+
+          .event-details {
+            h4 {
+              font-size: $font-size-base;
+              margin-bottom: $spacing-xs;
+              color: var(--color-text);
+            }
+
+            p {
+              color: var(--color-text-light);
+              font-size: $font-size-sm;
+            }
+          }
+
+          .cta-button {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: $spacing-sm $spacing-md;
+            border-radius: $border-radius-md;
+            cursor: pointer;
+            transition: $transition-normal;
+
+            &:hover {
+              background: var(--color-primary-dark);
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Consulting Section
+  .consulting {
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: $spacing-lg;
+      margin: $spacing-xl 0;
+
+      .service {
+        background: var(--color-background-card);
+        padding: $spacing-lg;
+        border-radius: $border-radius-md;
+        box-shadow: 0 1px 3px var(--color-shadow);
+
+        h3 {
+          font-size: $font-size-lg;
+          margin-bottom: $spacing-sm;
+          color: var(--color-text);
+        }
+
+        p {
+          color: var(--color-text-light);
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+
+  // Studio Section
+  .studio {
+    .coming-soon {
+      background: var(--color-background-card);
+      padding: $spacing-xl;
+      border-radius: $border-radius-md;
+      box-shadow: 0 1px 3px var(--color-shadow);
+      text-align: center;
+      margin-top: $spacing-xl;
+
+      .coming-soon-content {
+        max-width: 600px;
+        margin: 0 auto;
+
+        h3 {
+          font-size: $font-size-lg;
+          margin-bottom: $spacing-md;
+          color: var(--color-text);
+        }
+
+        p {
+          color: var(--color-text-light);
+          margin-bottom: $spacing-lg;
+        }
+
+        .cta-button {
+          &.disabled {
+            background: var(--color-text-light);
+            cursor: not-allowed;
+            opacity: 0.7;
+
+            &:hover {
+              transform: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Modal Styles
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: $z-index-modal;
+
+    .modal {
+      background: var(--color-background);
+      padding: $spacing-xl;
+      border-radius: $border-radius-lg;
+      box-shadow: 0 4px 6px var(--color-shadow);
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+
+      .modal-close {
+        position: absolute;
+        top: $spacing-md;
+        right: $spacing-md;
+        background: none;
+        border: none;
+        font-size: $font-size-2xl;
+        color: var(--color-text-light);
+        cursor: pointer;
+        padding: $spacing-xs;
+        line-height: 1;
+
+        &:hover {
+          color: var(--color-text);
+        }
+      }
+
+      h2 {
+        margin-bottom: $spacing-lg;
+        color: var(--color-text);
+      }
+
+      .consult-form {
+        .form-group {
+          margin-bottom: $spacing-md;
+
+          label {
+            display: block;
+            margin-bottom: $spacing-xs;
+            color: var(--color-text);
+            font-weight: 500;
+          }
+
+          input,
+          textarea {
+            width: 100%;
+            padding: $spacing-sm;
+            border: 1px solid var(--color-border);
+            border-radius: $border-radius-sm;
+            background: var(--color-background-card);
+            color: var(--color-text);
+
+            &:focus {
+              outline: none;
+              border-color: var(--color-primary);
+            }
+          }
+
+          textarea {
+            min-height: 100px;
+            resize: vertical;
+          }
+        }
+
+        .cta-button {
+          width: 100%;
+          margin-top: $spacing-lg;
+        }
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: $breakpoint-md) {
+    .programs-hero {
+      padding: $spacing-xl 0;
+
+      h1 {
+        font-size: $font-size-2xl;
+      }
+
+      .lead {
+        font-size: $font-size-lg;
+      }
+    }
+
+    .program-section {
+      padding: $spacing-xl 0;
+
+      .section-content {
+        padding: 0 $spacing-md;
+      }
+    }
+
+    .hackathons {
+      .event-list {
+        .event-item {
+          grid-template-columns: 1fr;
+          gap: $spacing-md;
+
+          .event-date {
+            min-width: auto;
+          }
+
+          .cta-button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    .programs-hero {
+      padding: $spacing-lg 0;
+
+      h1 {
+        font-size: $font-size-xl;
+      }
+    }
+
+    .program-section {
+      padding: $spacing-lg 0;
+    }
+
+    .features,
+    .services {
+      grid-template-columns: 1fr;
+    }
+  }
+} 

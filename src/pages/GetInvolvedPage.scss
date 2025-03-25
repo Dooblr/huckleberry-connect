@@ -19,40 +19,6 @@
     }
   }
 
-  // Alert
-  .alert {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: $spacing-md $spacing-lg;
-    border-radius: $border-radius-md;
-    display: flex;
-    align-items: center;
-    gap: $spacing-md;
-    z-index: $z-index-alert;
-    animation: slideIn 0.3s ease-out;
-
-    &.alert-success {
-      background-color: var(--color-success);
-      color: white;
-    }
-
-    &.alert-error {
-      background-color: var(--color-error);
-      color: white;
-    }
-
-    button {
-      background: none;
-      border: none;
-      color: white;
-      font-size: $font-size-xl;
-      cursor: pointer;
-      padding: 0;
-      line-height: 1;
-    }
-  }
-
   // Common Section Styles
   section {
     padding: $spacing-xl 0;
@@ -123,18 +89,6 @@
   .donations {
     .section-content {
       max-width: 600px;
-    }
-  }
-
-  // Animations
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
     }
   }
 

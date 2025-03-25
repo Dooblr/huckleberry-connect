@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 import './GetInvolvedPage.scss';
 
 const GetInvolvedPage = () => {
@@ -9,23 +10,15 @@ const GetInvolvedPage = () => {
     type: 'volunteer' // volunteer, partner, board
   });
 
-  const [showAlert, setShowAlert] = useState(false);
-  const [alertMessage, setAlertMessage] = useState('');
-  const [alertType, setAlertType] = useState<'success' | 'error'>('success');
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Simulate form submission
-    setAlertMessage('Thank you for your interest! We will contact you soon.');
-    setAlertType('success');
-    setShowAlert(true);
+    toast.success('Thank you for your interest! We will contact you soon.');
     setFormData({ name: '', email: '', message: '', type: 'volunteer' });
   };
 
   const handleDonation = () => {
-    setAlertMessage('Donation platform integration coming soon!');
-    setAlertType('success');
-    setShowAlert(true);
+    toast.success('Donation platform integration coming soon!');
   };
 
   return (
@@ -37,14 +30,6 @@ const GetInvolvedPage = () => {
           <p className="lead">Join us in making a difference through technology</p>
         </div>
       </section>
-
-      {/* Alert */}
-      {showAlert && (
-        <div className={`alert alert-${alertType}`}>
-          <p>{alertMessage}</p>
-          <button onClick={() => setShowAlert(false)}>×</button>
-        </div>
-      )}
 
       {/* Board Recruitment Section */}
       <section className="board-recruitment">

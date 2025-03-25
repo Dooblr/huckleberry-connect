@@ -34,6 +34,7 @@ $spacing-sm: 1rem;
 $spacing-md: 1.5rem;
 $spacing-lg: 2rem;
 $spacing-xl: 3rem;
+$spacing-xxl: 4rem;
 
 // Breakpoints
 $breakpoint-sm: 640px;
@@ -66,4 +67,5 @@ $z-index-fixed: 1030;
 $z-index-modal-backdrop: 1040;
 $z-index-modal: 1050;
 $z-index-popover: 1060;
-$z-index-tooltip: 1070; 
+$z-index-tooltip: 1070;
+$z-index-alert: 1070;
